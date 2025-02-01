@@ -1,0 +1,317 @@
+/* ========== RESET & TYPOGRAPHY ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+  }
+  
+  /* Headings */
+  h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* ========== NAVBAR ========== */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b3d91; /* Dark Blue */
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar-links li {
+    margin-left: 1rem;
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    opacity: 0.8;
+  }
+  
+  /* ========== HERO SECTION ========== */
+  .hero {
+    position: relative;
+    height: 60vh;
+    background: url("https://via.placeholder.com/1500x900") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+  }
+  
+  .hero-content {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 600px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn-primary {
+    background-color: #ffcb05;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ffdc73;
+  }
+  
+  /* ========== INFO SECTIONS ========== */
+  .info-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+  }
+  
+  .info-section.alt-background {
+    background-color: #e8f1ff;
+  }
+  
+  .info-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .section-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .section-image {
+    flex: 1 1 300px;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  
+  .section-text {
+    flex: 2 1 400px;
+    text-align: left;
+  }
+  
+  /* Lists */
+  ul {
+    margin-top: 1rem;
+    list-style-type: disc;
+    padding-left: 2rem;
+  }
+  
+  /* ========== COMPARISON SECTION ========== */
+  .comparison-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .section-title {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+  }
+  
+  .comparison-intro {
+    max-width: 800px;
+    margin: 0.5rem auto 2rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .comparison-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+  }
+  
+  .card {
+    background-color: #fafafa;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  /* Stats Table */
+  .stats-table {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  
+  .stats-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  
+  .stats-table th,
+  .stats-table td {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  .stats-table th {
+    background-color: #0b3d91;
+    color: #fff;
+    text-align: left;
+  }
+  
+  /* ========== ACHIEVEMENTS SECTION ========== */
+  .achievement-list {
+    text-align: left;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    list-style-type: square;
+    color: #444;
+  }
+  
+  .achievement-list li {
+    margin-bottom: 1rem;
+  }
+  
+  /* ========== CONTACT SECTION ========== */
+  .contact-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-container form {
+    margin-top: 2rem;
+    text-align: left;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  form button {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  /* ========== FOOTER ========== */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0b3d91;
+    color: #fff;
+  }
+  
+  /* ========== RESPONSIVE ADJUSTMENTS ========== */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .navbar-links li {
+      margin-left: 0.5rem;
+    }
+  
+    .section-row {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .section-image, .section-text {
+      margin-right: 0;
+    }
+  
+    .section-text {
+      text-align: center;
+    }
+  }
+  
+  /* ========== ANIMATIONS ========== */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  [data-animate].active {
+    opacity: 1;
+    transform: translateY(0px);
+  }

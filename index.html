@@ -1,267 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketball Trivia</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F5F5DC; /* Light Gold Background */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curry vs. Nikolai | The Better King</title>
 
-        .header {
-            background: linear-gradient(to right, #0033A0, #FDB927); /* Blue and Gold Gradient */
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        h2 {
-            color: #0033A0; /* Dark Blue */
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .question {
-            margin-bottom: 25px;
-        }
-
-        .options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .options button {
-            background-color: #FFF9E5; /* Pale Gold */
-            border: 2px solid #0033A0; /* Blue Border */
-            color: #0033A0;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .options button:hover {
-            background-color: #FDB927; /* Gold */
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .options button.correct {
-            background-color: #DFF0D8;
-            border-color: #3C763D;
-            color: #3C763D;
-        }
-
-        .options button.incorrect {
-            background-color: #F2DEDE;
-            border-color: #A94442;
-            color: #A94442;
-        }
-
-        .free-response {
-            margin-top: 40px;
-        }
-
-        .free-response input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .free-response input[type="text"]:focus {
-            border-color: #0033A0; /* Blue */
-            outline: none;
-        }
-
-        .free-response button {
-            background-color: #0033A0; /* Blue */
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .free-response button:hover {
-            background-color: #FDB927; /* Gold */
-            transform: scale(1.05);
-        }
-
-        .feedback {
-            margin-top: 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .feedback.correct {
-            color: #3C763D;
-        }
-
-        .feedback.incorrect {
-            color: #A94442;
-        }
-
-        .stephen-curry-image {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .stephen-curry-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .results {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .results h2 {
-            font-size: 2rem;
-            color: #0033A0;
-        }
-
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
-    </style>
-    <script>
-        let score = 0;
-        let questionsAnswered = 0;
-        const totalQuestions = 4; // Adjust based on the total number of questions
-
-        function checkAnswer(button) {
-            const buttons = button.parentElement.querySelectorAll('button');
-            buttons.forEach(btn => btn.disabled = true);
-            if (button.dataset.correct === "true") {
-                button.classList.add('correct');
-                score++;
-            } else {
-                button.classList.add('incorrect');
-            }
-            questionsAnswered++;
-            checkIfComplete();
-        }
-
-        function checkFreeResponse() {
-            const input = document.querySelector('.free-response input');
-            const feedback = document.querySelector('.free-response .feedback');
-            if (input.value.trim().toLowerCase() === 'stephencurry') {
-                feedback.textContent = 'Correct!';
-                feedback.classList.add('correct');
-                feedback.classList.remove('incorrect');
-                score++;
-            } else {
-                feedback.textContent = 'Incorrect. Try again!';
-                feedback.classList.add('incorrect');
-                feedback.classList.remove('correct');
-            }
-            questionsAnswered++;
-            checkIfComplete();
-        }
-
-        function checkIfComplete() {
-            if (questionsAnswered === totalQuestions) {
-                setTimeout(() => {
-                    document.body.innerHTML = `
-                        <div class="results">
-                            <h2>Trivia Results</h2>
-                            <p>You scored ${score} out of ${totalQuestions}!</p>
-                            <p>Thanks for playing!</p>
-                        </div>
-                    `;
-                }, 1000);
-            }
-        }
-    </script>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div class="header">
-        <h1>Basketball Trivia</h1>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="#">Curry Kingdom</a>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#curry-section">Stephen Curry</a></li>
+        <li><a href="#nikolai-section">Nikolai</a></li>
+        <li><a href="#comparison">Comparison</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="hero-content" data-animate="fade-in-down">
+      <h1>Stephen Curry: The Better King</h1>
+      <p>Discover why Curry reigns supreme over Nikolai.</p>
+      <button id="readMoreBtn" class="btn-primary">Read More</button>
+    </div>
+  </section>
+
+  <!-- ABOUT STEPHEN CURRY -->
+  <section id="curry-section" class="info-section">
+    <div class="info-container" data-animate="fade-in-up">
+      <h2>Meet Stephen Curry</h2>
+      <div class="section-row">
+        <div class="section-image">
+          <!-- Replace with your own image or a direct URL -->
+          <img 
+            src="1.jpg"
+            alt="Stephen Curry"
+          />
+        </div>
+        <div class="section-text">
+          <p>
+            Stephen Curry is a professional basketball player, widely regarded 
+            as one of the greatest shooters in NBA history. His unparalleled 
+            shooting range, impressive ball-handling skills, and leadership 
+            qualities have helped redefine modern basketball.
+          </p>
+          <ul>
+            <li>Four-time NBA Champion</li>
+            <li>Two-time NBA Most Valuable Player</li>
+            <li>Revolutionized the game with his 3-point shooting</li>
+            <li>Beloved globally for his sportsmanship and style</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT NIKOLAI -->
+  <section id="nikolai-section" class="info-section alt-background">
+    <div class="info-container" data-animate="fade-in-up">
+      <h2>Who is Nikolai?</h2>
+      <div class="section-row">
+        <div class="section-image">
+          <!-- Replace with your own image or a direct URL -->
+          <img 
+            src="wow.jpg"
+            alt="Nikolai"
+          />
+        </div>
+        <div class="section-text">
+          <p>
+            Nikolai is an imagined or lesser-known personality who aims 
+            to compete with Curry’s leadership status. Despite a promising skillset,
+            Nikolai falls short when it comes to consistent performance,
+            global influence, and unshakable legacy on the court.
+          </p>
+          <ul>
+            <li>Decent leadership abilities</li>
+            <li>Occasional standout performances</li>
+            <li>Less global recognition</li>
+            <li>Lacks Curry’s legendary 3-point shooting accuracy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON SECTION -->
+  <section id="comparison" class="info-section comparison-section">
+    <h2 class="section-title" data-animate="fade-in-down">Stephen Curry vs. Nikolai</h2>
+    <p class="comparison-intro" data-animate="fade-in">
+      From skill level to global impact, here’s why Stephen Curry outshines Nikolai in every aspect.
+    </p>
+
+    <div class="comparison-cards">
+      <div class="card" data-animate="fade-in-up">
+        <h3>Skill & Talent</h3>
+        <p>
+          Curry's shooting, dribbling, and clutch performances
+          are unmatched. Nikolai’s skills don’t quite reach that same
+          legendary status.
+        </p>
+      </div>
+      <div class="card" data-animate="fade-in-up">
+        <h3>Impact & Influence</h3>
+        <p>
+          By changing modern basketball and inspiring millions,
+          Curry’s global influence is enormous. Nikolai remains less
+          influential on and off the court.
+        </p>
+      </div>
+      <div class="card" data-animate="fade-in-up">
+        <h3>Consistency</h3>
+        <p>
+          Season after season, Curry performs at an elite level,
+          while Nikolai’s track record is more sporadic.
+        </p>
+      </div>
     </div>
 
-    <div class="container">
-        <div class="multiple-choice">
-            <h2>Part 1: Multiple Choice</h2>
-            <div class="question">
-                <p>Which player holds the record for the most points scored in a single NBA game?</p>
-                <div class="options">
-                    <button onclick="checkAnswer(this)" data-correct="true">Wilt Chamberlain</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">Michael Jordan</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">Kobe Bryant</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">LeBron James</button>
-                </div>
-            </div>
-            <div class="question">
-                <p>Which team has won the most NBA championships?</p>
-                <div class="options">
-                    <button onclick="checkAnswer(this)" data-correct="true">Boston Celtics</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">Los Angeles Lakers</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">Chicago Bulls</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">Golden State Warriors</button>
-                </div>
-            </div>
-            <div class="question">
-                <p>Who is the NBA’s all-time leading scorer?</p>
-                <div class="options">
-                    <button onclick="checkAnswer(this)" data-correct="true">Kareem Abdul-Jabbar</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">Karl Malone</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">LeBron James</button>
-                    <button onclick="checkAnswer(this)" data-correct="false">Shaquille O'Neal</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="free-response">
-            <h2>Part 2: Free Response</h2>
-            <div class="question">
-                <p>Which player is known as "The Chef" due to his amazing shooting skills?</p>
-                <input type="text" placeholder="Your answer here">
-                <button onclick="checkFreeResponse()">Check Answer</button>
-                <div class="feedback"></div>
-            </div>
-            <div class="stephen-curry-image">
-                <img src="StephenCurry.jpg" alt="Stephen Curry">
-            </div>
-        </div>
+    <!-- Stats Table -->
+    <div class="stats-table" data-animate="fade-in-up">
+      <table>
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th>Stephen Curry</th>
+            <th>Nikolai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NBA Championships</td>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>MVP Awards</td>
+            <td>2</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>3-Pt Record in a Season</td>
+            <td>402</td>
+            <td>Not Applicable</td>
+          </tr>
+          <tr>
+            <td>Global Fan Base</td>
+            <td>Massive</td>
+            <td>Modest</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </section>
 
-    <footer>
-        <p>Have fun and keep learning about basketball!</p>
-    </footer>
+  <!-- ACHIEVEMENTS SECTION -->
+  <section id="achievements" class="info-section alt-background">
+    <div class="info-container" data-animate="fade-in">
+      <h2>Key Achievements of Stephen Curry</h2>
+      <ul class="achievement-list">
+        <li><strong>2022 Finals MVP:</strong> Led his team to victory with clutch shots and unrivaled performance.</li>
+        <li><strong>All-Time 3-Point Leader:</strong> Surpassed legends of the game to become the #1 3-point scorer.</li>
+        <li><strong>Community Work:</strong> Known for philanthropy and involvement in various charities.</li>
+        <li><strong>Inspirational Icon:</strong> Encourages youth and amateurs to keep practicing their shot.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container" data-animate="fade-in-up">
+      <h2>Contact Us</h2>
+      <p>Have questions or want to share your thoughts? Let us know!</p>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required/>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button class="btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Curry Kingdom. All rights reserved.</p>
+  </footer>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
